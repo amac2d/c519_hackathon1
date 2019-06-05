@@ -1,8 +1,9 @@
-class BoardObj{
-  constructor(){
-    this.clayResource = null;
-    this.foodResource = null;
-    this.woodResource = null;
-    this.stoneResource = null;
+class Resource{
+  constructor( name ){
+    this.name = name;
+    this.value = null;
+  }
+  getCurrentResourceValue(){
+    
   }
 }
