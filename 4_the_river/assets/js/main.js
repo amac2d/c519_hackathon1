@@ -7,3 +7,16 @@ class Resource{
     
   }
 }
+
+class Player{
+  constructor(){
+    this.name = "player";
+    this.number = "1";
+  }
+
+  incrementPlayerResourceValue(){
+   var playerResourcesCount = $("div.playerResources > span > div").val().parseInt();
+   playerResourcesCount++;
+
+  }
+}
