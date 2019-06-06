@@ -37,16 +37,21 @@ class Board{
     
   }
   decrementResource(event){
-    debugger;
     var resourceType = $(event.currentTarget).attr('data-resource'); 
     var newValue = this.getResourceValue(resourceType); 
-    
-    if (newValue >= 1) {
-      newValue -= 1;
+    var tempValue = newValue;
+    var productionValue = this.players.player1.production;
+
+    if (productionValue > newValue){
+      newValue -= newValue;
       this.resources[resourceType] = newValue;
       this.displayGameboard();
-    
-      this.players.player1.incrementPlayerResourceValue();
+      this.players.player1.incrementPlayerResourceValue(tempValue);
+    } else if (newValue >= 1) {
+      newValue -= productionValue;
+      this.resources[resourceType] = newValue;
+      this.displayGameboard();
+      this.players.player1.incrementPlayerResourceValue(productionValue);
     }
   }
   selectProductionTile(event){
@@ -69,8 +74,8 @@ class Player{
     this.playerResource = 0;
     this.production = 0;
   }
-  incrementPlayerResourceValue(){
-    this.playerResource += 1;
+  incrementPlayerResourceValue(resourceNumber){
+    this.playerResource += resourceNumber;
     this.updatePlayerDisplay();
 
     if(this.playerResource === 5){
