@@ -25,7 +25,9 @@ class Board{
   decrementResource(event){
     var spanId = $(event.currentTarget).parent().find('span').attr('id');
     var newValue = this.getResourceValue(spanId);
+    if (newValue >= 1) {
     newValue = this.value - 1;
+    }
     var updatedValue = $(`#${spanId}`).text(newValue);
     var player1 = new Player();
     player1.incrementPlayerResourceValue();
