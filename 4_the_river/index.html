@@ -18,8 +18,11 @@
       <div class="playerResourcesCount">0</div>
     </div>
     <div class="playerProduction">
-      <span>Production</span>
-      <div class="playerProductionCount">0</div>
+      <span>Production Power</span>
+      <div class="playerProductionCount clay" id="clayPower">0</div>
+      <div class="playerProductionCount food" id="foodPower">0</div>
+      <div class="playerProductionCount wood" id="woodPower">0</div>
+      <div class="playerProductionCount stone" id="stonePower">0</div>
     </div>
   </div>
   <div class="gameBoard">
@@ -50,19 +53,19 @@
   <div class="tiles">
     <div class="tile clay">
       <span class="clay TileValue" id="clayTile">+1</span>
-      <button class="tile-button" id="clay-tile-button" type="button">Clay Production</button>
+      <button class="tile-button" id="clay-tile-button" type="button" data-resource="clay">Clay Production</button>
     </div>
     <div class="tile food">
         <span class="food TileValue" id="foodTile">+1</span>
-        <button class="tile-button" id="food-tile-button" type="button">Food Production</button>
+        <button class="tile-button" id="food-tile-button" type="button" data-resource="food">Food Production</button>
     </div>
     <div class="tile wood">
         <span class="wood TileValue" id="woodTile">+1</span>
-        <button class="tile-button" id="wood-tile-button" type="button">Wood Production</button>
+        <button class="tile-button" id="wood-tile-button" type="button" data-resource="wood">Wood Production</button>
     </div>
     <div class="tile stone">
         <span class="stone TileValue" id="stoneTile">+1</span>
-        <button class="tile-button" id="stone-tile-button" type="button">Stone Production</button>
+        <button class="tile-button" id="stone-tile-button" type="button" data-resource="stone">Stone Production</button>
     </div>
   </div>
   <div class ="modalShadow hidden" id="winModalContainer">
