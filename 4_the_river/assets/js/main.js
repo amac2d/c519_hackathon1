@@ -51,7 +51,7 @@ class Player{
    $(".playerResourcesCount").text(this.playerResource);
 
     //this.displayWinModal(); used this to test that display modal function worked
-    if(playerResourcesCount === 5){
+    if(this.playerResource === 5){
       this.displayWinModal();
     }
 
