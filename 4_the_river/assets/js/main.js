@@ -4,6 +4,7 @@ function initializeApp(){
   resource = new Board("stone");
   resource.makeNewPlayer('player1');
 
+
 }
 class Board{
   constructor( name ){
@@ -37,10 +38,11 @@ class Board{
     
   }
   decrementResource(event){
-    var resourceType = $(event.currentTarget).attr('data-resource'); 
+    debugger;
+    var resourceType = $(event.currentTarget).attr('data-resource');
     var newValue = this.getResourceValue(resourceType); 
     var tempValue = newValue;
-    var productionValue = this.players.player1.production;
+    var productionValue = this.players.player1.production[resourceType];
 
     if (productionValue > newValue){
       newValue -= newValue;
@@ -55,7 +57,10 @@ class Board{
     }
   }
   selectProductionTile(event){
-    this.players.player1.incrementPlayerProductionAmount();
+    debugger;
+    var productionType = $(event.currentTarget).attr('data-resource');
+
+    this.players.player1.incrementPlayerProductionAmount(productionType);
 
   }
   makeNewPlayer( name ){
@@ -72,7 +77,13 @@ class Player{
     this.name = "player";
     this.number = "1";
     this.playerResource = 0;
-    this.production = 0;
+    this.production = {
+      'clay': 0,
+      'wood': 0,
+      'stone': 0,
+      'food': 0,
+    }
+
   }
   incrementPlayerResourceValue(resourceNumber){
     this.playerResource += resourceNumber;
@@ -85,12 +96,17 @@ class Player{
   }
    updatePlayerDisplay(){
     $(".playerResourcesCount").text(this.playerResource);
-    $(".playerProductionCount").text(this.production);
+    // $(".playerProductionCount").text(this.production[resourceType]);
+     $('#clayPower').text(this.production.clay);
+     $('#foodPower').text(this.production.food);
+     $('#woodPower').text(this.production.wood);
+     $('#stonePower').text(this.production.stone);
+
    }
 
-  incrementPlayerProductionAmount(){
-    this.production += 1;
-    this.updatePlayerDisplay();
+  incrementPlayerProductionAmount(resourceType){
+    this.production[resourceType] += 1;
+    this.updatePlayerDisplay(resourceType);
   }
    displayWinModal(){
     $("#winModalContainer").removeClass("hidden");
