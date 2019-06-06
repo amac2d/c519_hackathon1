@@ -1,7 +1,7 @@
 $(document).ready(initializeApp);
 
 function initializeApp(){
-
+debugger;
 var resource = new Board("stone");
 $('.resource').on('click', 'button', resource.decrementResource);
 resource.makeNewPlayer('player1');
@@ -49,8 +49,19 @@ class Player{
   incrementPlayerResourceValue(){
     this.playerResource += 1;
    $(".playerResourcesCount").text(this.playerResource);
+
+    //this.displayWinModal(); used this to test that display modal function worked
+    if(playerResourcesCount === 5){
+      this.displayWinModal();
+    }
+
   }
-  displayPlayerResourceValue(){
+   displayWinModal(){
+    $("#winModalContainer").removeClass("hidden");
+
+   }
   }
+ // displayPlayerResourceValue(){
+ // }
 }
 
