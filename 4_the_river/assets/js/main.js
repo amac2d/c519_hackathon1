@@ -24,11 +24,11 @@ class Board{
     var newValue = this.getResourceValue(spanId);
     if (newValue >= 1) {
     newValue = this.value - 1;
-    }
     var updatedValue = $(`#${spanId}`).text(newValue);
 
     this.players.player1.incrementPlayerResourceValue();
     //clean this player1 part up since we are manually calling the property in the players obj
+    }
   }
   makeNewPlayer( name ){
     if (this.players[name]) {
