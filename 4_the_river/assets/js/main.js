@@ -1,10 +1,8 @@
 $(document).ready(initializeApp);
-
+var resource;
 function initializeApp(){
-var resource = new Board("stone");
-$('.resource').on('click', 'button', resource.decrementResource);
-resource.makeNewPlayer('player1');
-$('.tiles').on('click', 'button', resource.selectProductionTile );
+  resource = new Board("stone");
+  resource.makeNewPlayer('player1');
 
 }
 class Board{
@@ -12,23 +10,43 @@ class Board{
     this.name = name;
     this.value = null;
     this.players = {};
+    this.resources = {
+      'clay': 9,
+      'wood': 9,
+      'stone': 9,
+      'food': 4
+    };
     this.decrementResource = this.decrementResource.bind(this);
-    this.selectProductionTile = this.selectProductionTile.bind(this);
+    this.selectProductionTile = this.selectProductionTile.bind(this); 
+    this.addEventListeners();
+    this.displayGameboard();
   }
-  getResourceValue(spanId){
-    this.value = $(`#${spanId}`).text();
-    var integerValue = parseInt(this.value);
-    return integerValue;
+  displayGameboard(){
+    $('#claySpan').text(this.resources.clay);
+    $('#woodSpan').text(this.resources.wood);
+    $('#foodSpan').text(this.resources.food);
+    $('#stoneSpan').text(this.resources.stone);
+  }
+  addEventListeners(){
+    $('.resource').on('click', 'button', this.decrementResource);
+    $('.tiles').on('click', 'button', this.selectProductionTile );
+
+  }
+  getResourceValue(resourceType){
+    return this.resources[resourceType];
+    
   }
   decrementResource(event){
-    var spanId = $(event.currentTarget).parent().find('span').attr('id');
-    var newValue = this.getResourceValue(spanId);
+    debugger;
+    var resourceType = $(event.currentTarget).attr('data-resource'); 
+    var newValue = this.getResourceValue(resourceType); 
+    
     if (newValue >= 1) {
-    newValue = this.value - 1;
-    var updatedValue = $(`#${spanId}`).text(newValue);
-
-    this.players.player1.incrementPlayerResourceValue();
-    //clean this player1 part up since we are manually calling the property in the players obj
+      newValue -= 1;
+      this.resources[resourceType] = newValue;
+      this.displayGameboard();
+    
+      this.players.player1.incrementPlayerResourceValue();
     }
   }
   selectProductionTile(event){
@@ -53,18 +71,21 @@ class Player{
   }
   incrementPlayerResourceValue(){
     this.playerResource += 1;
-   $(".playerResourcesCount").text(this.playerResource);
+    this.updatePlayerDisplay();
 
-    //this.displayWinModal(); used this to test that display modal function worked
     if(this.playerResource === 5){
       this.displayWinModal();
     }
 
   }
+   updatePlayerDisplay(){
+    $(".playerResourcesCount").text(this.playerResource);
+    $(".playerProductionCount").text(this.production);
+   }
 
   incrementPlayerProductionAmount(){
     this.production += 1;
-    $(".playerProductionCount").text(this.production);
+    this.updatePlayerDisplay();
   }
    displayWinModal(){
     $("#winModalContainer").removeClass("hidden");
