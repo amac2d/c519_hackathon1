@@ -4,7 +4,7 @@ function initializeApp(){
 var resource = new Board("stone");
 $('.resource').on('click', 'button', resource.decrementResource);
 resource.makeNewPlayer('player1');
-$('.tiles').on('click', 'button', resource.selectProductionTile() )
+$('.tiles').on('click', 'button', resource.selectProductionTile );
 
 }
 class Board{
@@ -13,6 +13,7 @@ class Board{
     this.value = null;
     this.players = {};
     this.decrementResource = this.decrementResource.bind(this);
+    this.selectProductionTile = this.selectProductionTile.bind(this);
   }
   getResourceValue(spanId){
     this.value = $(`#${spanId}`).text();
@@ -31,7 +32,7 @@ class Board{
     }
   }
   selectProductionTile(event){
-    player1.incrementPlayerProductionAmount();
+    this.players.player1.incrementPlayerProductionAmount();
 
   }
   makeNewPlayer( name ){
