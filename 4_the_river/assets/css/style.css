@@ -54,7 +54,7 @@ header {
 
 .resource {
   display: inline-block;
-  height: 48%;
+  height: 100%;
   width: 48%;
   border: 2px solid black;
   margin-left: 1%;
@@ -66,6 +66,12 @@ header {
   display: block;
   height: 15%;
   font-size: 1.5rem;
+}
+
+.twoResources {
+  margin: 0;
+  height: 50%;
+  border: 4px solid cyan;
 }
 
 .clay {
@@ -120,5 +126,27 @@ header {
   left: 50%;
   transform: translate(-50%, -50%);
   padding: 100px;
+}
 
+.tile {
+  height: 20%;
+  width: 70%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 6%;
+  border: 2px solid black;
+  text-align: center;
+  font-size: 1.5rem;
+}
+
+.tile-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: aqua;
+  height: 20%;
+  font-size: 1rem;
+}
 
