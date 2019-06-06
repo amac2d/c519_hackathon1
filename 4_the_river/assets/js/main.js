@@ -21,12 +21,16 @@ class Board{
     
   }
 
+
   decrementResource(event){
     var spanId = $(event.currentTarget).parent().find('span').attr('id');
     var newValue = this.getResourceValue(spanId);
     newValue = this.value - 1;
     var updatedValue = $(`#${spanId}`).text(newValue);
+    var player1 = new Player();
+    player1.incrementPlayerResourceValue();
   
+
   }
 
  
@@ -36,11 +40,21 @@ class Player{
   constructor(){
     this.name = "player";
     this.number = "1";
+    this.playerResource = 0;
+    // this.production = 0;
   }
 
   incrementPlayerResourceValue(){
-   var playerResourcesCount = $("div.playerResources > span > div").val();
+
+   var playerResourcesCount = this.playerResource;
+
    playerResourcesCount++;
+   this.playerResource = playerResourcesCount;
+   $(".playerResourcesCount").text(this.playerResource);
+
+
+  }
+  displayPlayerResourceValue(){
 
   }
 }

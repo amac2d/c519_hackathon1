@@ -30,7 +30,7 @@ header {
   border: 2px solid black;
   display: inline-block;
   background-color: sienna;
-  width: 18%; 
+  width: 18%;
   height: 75vh;
   vertical-align: top;
 }
@@ -39,17 +39,17 @@ header {
 .playerProduction,
 .player {
   border: 2px solid black;
-  height: 10vh;
+  height: 24vh;
   text-align: center;
   background-color: green;
-  margin-bottom: 15vh;
+  margin-bottom: 0vh;
 }
 
 .resourceContainer {
-border: 1px solid red;
-display: inline-block;
-height: 60vh;
-width: 64vw;
+  border: 1px solid red;
+  display: inline-block;
+  height: 60vh;
+  width: 64vw;
 }
 
 .resource {
