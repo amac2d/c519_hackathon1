@@ -1,7 +1,6 @@
 $(document).ready(initializeApp);
 
 function initializeApp(){
-debugger;
 var resource = new Board("stone");
 $('.resource').on('click', 'button', resource.decrementResource);
 resource.makeNewPlayer('player1');

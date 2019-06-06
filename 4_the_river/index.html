@@ -25,6 +25,7 @@
   <div class="gameBoard">
     <span class="resourceHeader">Resources</span>
     <div class="resourceContainer">
+      <div class="twoResources">
       <div class="resource clay">
         <span class="clayValue value" id="claySpan">9</span>
        <button class="button" id="clay-button" type="button">Get Clay</button>
@@ -33,17 +34,37 @@
        <span class="foodValue value" id="foodSpan">4</span>
        <button class="button" id="food-button" type="button">Get Food</button>
      </div>
-      <div class="resource wood">
-        <span class="woodValue value" id="woodSpan">9</span>
-       <button class="button" id="wood-button"type="button">Get Wood</button>
-      </div>
-     <div class="resource stone">
-        <span class="stoneValue value" id="stoneSpan">9</span>
-       <button class="button" id="stone-button"type="button">Get Stone</button>
      </div>
+     <div class="twoResources">
+        <div class="resource wood">
+          <span class="woodValue value" id="woodSpan">9</span>
+        <button class="button" id="wood-button"type="button">Get Wood</button>
+        </div>
+      <div class="resource stone">
+          <span class="stoneValue value" id="stoneSpan">9</span>
+        <button class="button" id="stone-button"type="button">Get Stone</button>
+      </div>
+    </div>
     </div>
   </div>
-  <div class="tiles"></div>
+  <div class="tiles">
+    <div class="tile clay">
+      <span class="clay TileValue" id="clayTile">+1</span>
+      <button class="tile-button" id="clay-tile-button" type="button">Clay Production</button>
+    </div>
+    <div class="tile food">
+        <span class="food TileValue" id="foodTile">+1</span>
+        <button class="tile-button" id="food-tile-button" type="button">Food Production</button>
+    </div>
+    <div class="tile wood">
+        <span class="wood TileValue" id="woodTile">+1</span>
+        <button class="tile-button" id="wood-tile-button" type="button">Wood Production</button>
+    </div>
+    <div class="tile stone">
+        <span class="stone TileValue" id="stoneTile">+1</span>
+        <button class="tile-button" id="stone-tile-button" type="button">Stone Production</button>
+    </div>
+  </div>
   <div class ="modalShadow hidden" id="winModalContainer">
     <div class="winModal">
       <p>Congratulations you win!</p>
