@@ -4,24 +4,21 @@ function initializeApp(){
 
 var resource = new Board("stone");
 $('.resource').on('click', 'button', resource.decrementResource);
+resource.makeNewPlayer('player1');
 
 }
 class Board{
-  
   constructor( name ){
     this.name = name;
     this.value = null;
+    this.players = {};
     this.decrementResource = this.decrementResource.bind(this);
   }
-
   getResourceValue(spanId){
     this.value = $(`#${spanId}`).text();
     var integerValue = parseInt(this.value);
     return integerValue;
-    
   }
-
-
   decrementResource(event){
     var spanId = $(event.currentTarget).parent().find('span').attr('id');
     var newValue = this.getResourceValue(spanId);
@@ -29,13 +26,17 @@ class Board{
     newValue = this.value - 1;
     }
     var updatedValue = $(`#${spanId}`).text(newValue);
-    var player1 = new Player();
-    player1.incrementPlayerResourceValue();
-  
 
+    this.players.player1.incrementPlayerResourceValue();
+    //clean this player1 part up since we are manually calling the property in the players obj
   }
-
- 
+  makeNewPlayer( name ){
+    if (this.players[name]) {
+      return false;
+    } else {
+      this.players[name] = new Player( name );
+    }
+  }
 }
 
 class Player{
@@ -45,19 +46,11 @@ class Player{
     this.playerResource = 0;
     // this.production = 0;
   }
-
   incrementPlayerResourceValue(){
-
-   var playerResourcesCount = this.playerResource;
-
-   playerResourcesCount++;
-   this.playerResource = playerResourcesCount;
+    this.playerResource += 1;
    $(".playerResourcesCount").text(this.playerResource);
-
-
   }
   displayPlayerResourceValue(){
-
   }
 }
 
