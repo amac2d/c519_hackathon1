@@ -5,6 +5,7 @@ debugger;
 var resource = new Board("stone");
 $('.resource').on('click', 'button', resource.decrementResource);
 resource.makeNewPlayer('player1');
+$('.tiles').on('click', 'button', resource.selectProductionTile() )
 
 }
 class Board{
@@ -30,6 +31,10 @@ class Board{
     this.players.player1.incrementPlayerResourceValue();
     //clean this player1 part up since we are manually calling the property in the players obj
   }
+  selectProductionTile(event){
+    player1.incrementPlayerProductionAmount();
+
+  }
   makeNewPlayer( name ){
     if (this.players[name]) {
       return false;
@@ -44,7 +49,7 @@ class Player{
     this.name = "player";
     this.number = "1";
     this.playerResource = 0;
-    // this.production = 0;
+    this.production = 0;
   }
   incrementPlayerResourceValue(){
     this.playerResource += 1;
@@ -55,6 +60,11 @@ class Player{
       this.displayWinModal();
     }
 
+  }
+
+  incrementPlayerProductionAmount(){
+    this.production += 1;
+    $(".playerProductionCount").text(this.production);
   }
    displayWinModal(){
     $("#winModalContainer").removeClass("hidden");
