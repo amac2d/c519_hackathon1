@@ -38,7 +38,6 @@ class Board{
     
   }
   decrementResource(event){
-    debugger;
     var resourceType = $(event.currentTarget).attr('data-resource');
     var newValue = this.getResourceValue(resourceType); 
     var tempValue = newValue;
@@ -48,16 +47,15 @@ class Board{
       newValue -= newValue;
       this.resources[resourceType] = newValue;
       this.displayGameboard();
-      this.players.player1.incrementPlayerResourceValue(tempValue);
+      this.players.player1.incrementPlayerResourceValue(tempValue, resourceType);
     } else if (newValue >= 1) {
       newValue -= productionValue;
       this.resources[resourceType] = newValue;
       this.displayGameboard();
-      this.players.player1.incrementPlayerResourceValue(productionValue);
+      this.players.player1.incrementPlayerResourceValue(productionValue, resourceType);
     }
   }
   selectProductionTile(event){
-    debugger;
     var productionType = $(event.currentTarget).attr('data-resource');
 
     this.players.player1.incrementPlayerProductionAmount(productionType);
@@ -76,7 +74,12 @@ class Player{
   constructor(){
     this.name = "player";
     this.number = "1";
-    this.playerResource = 0;
+    this.playerResource = {
+        'clay': 0,
+        'wood': 0,
+        'stone': 0,
+        'food': 0,
+    };
     this.production = {
       'clay': 0,
       'wood': 0,
@@ -85,8 +88,8 @@ class Player{
     }
 
   }
-  incrementPlayerResourceValue(resourceNumber){
-    this.playerResource += resourceNumber;
+  incrementPlayerResourceValue(resourceNumber, resourceType){
+    this.playerResource[resourceType] += resourceNumber;
     this.updatePlayerDisplay();
 
     if(this.playerResource === 5){
@@ -95,7 +98,10 @@ class Player{
 
   }
    updatePlayerDisplay(){
-    $(".playerResourcesCount").text(this.playerResource);
+     $("#clayAmount").text(this.playerResource.clay);
+     $("#foodAmount").text(this.playerResource.food);
+     $("#woodAmount").text(this.playerResource.wood);
+     $("#stoneAmount").text(this.playerResource.stone);
     // $(".playerProductionCount").text(this.production[resourceType]);
      $('#clayPower').text(this.production.clay);
      $('#foodPower').text(this.production.food);
