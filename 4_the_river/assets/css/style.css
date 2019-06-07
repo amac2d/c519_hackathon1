@@ -1,6 +1,6 @@
 body {
     height: 100vh;
-    background-image: url("/assets/images/maxresdefault.jpg");
+    background-image: url('../images/maxresdefault.jpg');
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-position: center;
@@ -110,21 +110,21 @@ header {
 .wood,
 .food,
 .clay {
-  background-image: url("/assets/images/bentonite-clay-800x800.jpg");
+  background-image: url("../images/bentonite-clay-800x800.jpg");
   background-size: cover;
   background-repeat: no-repeat;
 }
 .clay {
-  background-image: url("/assets/images/bentonite-clay-800x800.jpg");
+  background-image: url("../images/bentonite-clay-800x800.jpg");
 }
 .food {
-  background-image: url("/assets/images/BoneCollector_JakeVsTomFeature-1030x579.png");
+  background-image: url("../images/BoneCollector_JakeVsTomFeature-1030x579.png");
 }
 .wood {
-  background-image: url("/assets/images/2DB5933600000578-0-image-a-9_1445648327043.jpg");
+  background-image: url("../images/2DB5933600000578-0-image-a-9_1445648327043.jpg");
 }
 .stone {
-  background-image: url("/assets/images/ilustra_picapedrer.jpg");
+  background-image: url("../images/ilustra_picapedrer.jpg");
 }
 
 .value {

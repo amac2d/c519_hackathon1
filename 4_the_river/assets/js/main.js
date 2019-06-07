@@ -106,11 +106,13 @@ class Player{
 
   }
    updatePlayerDisplay(){
+     //player resources
      $("#clayAmount").text(this.playerResource.clay);
      $("#foodAmount").text(this.playerResource.food);
      $("#woodAmount").text(this.playerResource.wood);
      $("#stoneAmount").text(this.playerResource.stone);
-    // $(".playerProductionCount").text(this.production[resourceType]);
+
+     //player production power
      $('#clayPower').text(this.production.clay);
      $('#foodPower').text(this.production.food);
      $('#woodPower').text(this.production.wood);
