@@ -93,6 +93,11 @@ header {
   text-shadow: 2px 2px 2px black;
 }
 
+.playerProductionCount,
+.playerResourcesCount {
+  height: 21%
+}
+
 .playerResources span {
   color: black;
   text-shadow: none;
