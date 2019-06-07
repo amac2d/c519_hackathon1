@@ -44,17 +44,23 @@ class Board{
     var tempValue = newValue;
     var productionValue = this.players.player1.production[resourceType];
 
-    if (productionValue > newValue){
+    if (productionValue > newValue && newValue !== 0){
       newValue -= newValue;
       this.resources[resourceType] = newValue;
       this.displayGameboard();
       this.players.player1.incrementPlayerResourceValue(tempValue);
-    } else if (newValue >= 1) {
+    } else if (productionValue !== 0 && newValue !== 0) {
       newValue -= productionValue;
       this.resources[resourceType] = newValue;
       this.displayGameboard();
       this.players.player1.incrementPlayerResourceValue(productionValue);
+    } else if ( newValue === 0 ){
+      alert('You have exhausted all ' + resourceType + ' resources.');
     }
+    else {
+      alert("You do not have the production power " + resourceType + "." + "\n" + "Please build more Pylons.");
+    }
+
   }
   selectProductionTile(event){
     debugger;
