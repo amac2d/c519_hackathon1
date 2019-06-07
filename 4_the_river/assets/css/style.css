@@ -1,5 +1,10 @@
 body {
-  background-color: palegreen;
+    height: 100vh;
+    background-image: url("/assets/images/maxresdefault.jpg");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+    background-size: cover;
 }
 
 header {
@@ -7,11 +12,10 @@ header {
   width: 100%;
   text-align: center;
   font-size: 2.5rem;
-  border: 2px solid black;
+  
 }
 
 .playerStatsContainer {
-  border: 2px solid black;
   display: inline-block;
   width: 15%;
   height: 75vh;
@@ -19,7 +23,6 @@ header {
 }
 
 .gameBoard {
-  border: 2px solid black;
   display: inline-block;
   width: 65%;
   height: 75vh;
@@ -29,24 +32,54 @@ header {
 .tiles {
   border: 2px solid black;
   display: inline-block;
-  background-color: sienna;
+  background-color: rgb(92, 215, 206, 0.75);
   width: 18%;
   height: 75vh;
   vertical-align: top;
+  
+
+}
+
+.tile {
+  height: 20%;
+  width: 70%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 6%;
+  border: 2px solid black;
+  text-align: center;
+  font-size: 2.0rem;
+}
+
+.tile-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: aqua;
+  height: 20%;
+  font-size: 1rem;
 }
 
 .playerResources,
 .playerProduction,
 .player {
   border: 2px solid black;
-  height: 24vh;
+  height: 21vh;
   text-align: center;
-  background-color: green;
+  background-color: rgb(92, 215, 206, 0.75);
   margin-bottom: 0vh;
 }
 
+.tile,
+.resource,
+.playerProductionCount {
+  color: #62E6FF;
+  text-shadow: 2px 2px 2px black;
+}
+
 .resourceContainer {
-  border: 1px solid red;
   display: inline-block;
   height: 60vh;
   width: 64vw;
@@ -71,23 +104,27 @@ header {
 .twoResources {
   margin: 0;
   height: 50%;
-  border: 4px solid cyan;
 }
 
+.stone,
+.wood,
+.food,
 .clay {
-  background-color: salmon;
+  background-image: url("/assets/images/bentonite-clay-800x800.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
 }
-
+.clay {
+  background-image: url("/assets/images/bentonite-clay-800x800.jpg");
+}
 .food {
-  background-color: snow;
+  background-image: url("/assets/images/BoneCollector_JakeVsTomFeature-1030x579.png");
 }
-
 .wood {
-  background-color: saddlebrown;
+  background-image: url("/assets/images/2DB5933600000578-0-image-a-9_1445648327043.jpg");
 }
-
 .stone {
-  background-color: darkgrey;
+  background-image: url("/assets/images/ilustra_picapedrer.jpg");
 }
 
 .value {
@@ -128,25 +165,4 @@ header {
   padding: 100px;
 }
 
-.tile {
-  height: 20%;
-  width: 70%;
-  margin-left: auto;
-  margin-right: auto;
-  margin-top: 6%;
-  border: 2px solid black;
-  text-align: center;
-  font-size: 1.5rem;
-}
-
-.tile-button {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-left: auto;
-  margin-right: auto;
-  background-color: aqua;
-  height: 20%;
-  font-size: 1rem;
-}
 
