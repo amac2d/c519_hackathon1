@@ -1,0 +1,196 @@
+body {
+    height: 100vh;
+    background-image: url('../images/maxresdefault.jpg');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+    background-size: cover;
+    font-family: Verdana, sans-serif;
+}
+
+header {
+  height: 15vh;
+  width: 100%;
+  text-align: center;
+  font-size: 2.5rem;
+  
+}
+
+.playerStatsContainer {
+  display: inline-block;
+  width: 15%;
+  height: 75vh;
+  font-size: 2rem;
+}
+
+.gameBoard {
+  display: inline-block;
+  width: 65%;
+  height: 75vh;
+  vertical-align: top;
+}
+
+.tiles {
+  border: 2px solid black;
+  display: inline-block;
+  background-color: rgb(92, 215, 206, 0.75);
+  width: 18%;
+  height: 75vh;
+  vertical-align: top;
+  
+
+}
+
+.tile {
+  height: 20%;
+  width: 70%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 6%;
+  border: 2px solid black;
+  text-align: center;
+  font-size: 2.0rem;
+}
+
+.tile-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: aqua;
+  height: 20%;
+  font-size: 1rem;
+}
+
+.playerResources,
+.playerProduction,
+.player {
+  border: 2px solid black;
+  text-align: center;
+  background-color: rgb(92, 215, 206, 0.75);
+  font-size: 1.50rem;
+}
+
+.player {
+  font-size: 2.5rem;
+}
+
+.playerProduction,
+.playerResources {
+  height: 26vh;
+}
+
+.player {
+  height: 18vh;
+}
+
+.tile,
+.resource,
+.playerResources,
+.playerProductionCount {
+  color: #62E6FF;
+  text-shadow: 2px 2px 2px black;
+}
+
+.playerProductionCount,
+.playerResourcesCount {
+  height: 21%
+}
+
+.playerResources span {
+  color: black;
+  text-shadow: none;
+}
+
+.resourceContainer {
+  display: inline-block;
+  height: 60vh;
+  width: 64vw;
+}
+
+.resource {
+  display: inline-block;
+  height: 100%;
+  width: 48%;
+  border: 2px solid black;
+  margin-left: 1%;
+  text-align: center;
+}
+
+.resourceHeader {
+  text-align: center;
+  display: block;
+  height: 15%;
+  font-size: 1.5rem;
+}
+
+.twoResources {
+  margin: 0;
+  height: 50%;
+}
+
+.stone,
+.wood,
+.food,
+.clay {
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+.clay {
+  background-image: url("../images/bentonite-clay-800x800.jpg");
+}
+.food {
+  background-image: url("../images/BoneCollector_JakeVsTomFeature-1030x579.png");
+}
+.wood {
+  background-image: url("../images/2DB5933600000578-0-image-a-9_1445648327043.jpg");
+}
+.stone {
+  background-image: url("../images/ilustra_picapedrer.jpg");
+}
+
+.value {
+  display: block;
+  font-size: 3rem;
+  height: 50%;
+  margin: auto;
+}
+
+.button {
+  background-color: aqua;
+  height: 25%;
+  font-size: 2rem;
+  font-family: Verdana, sans-serif;
+}
+
+.tile-button {
+  font-family: Verdana, sans-serif;
+}
+
+.hidden {
+  display: none;
+}
+.modalShadow{
+  position: fixed;
+  background-color: rgba(0, 0, 0, .5);
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100vw;
+}
+
+
+.winModal {
+  background-color: #5bc0de;
+  color: black;
+  position: absolute;
+  text-align: center;
+  font-size: 30px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 100px;
+}
+
+

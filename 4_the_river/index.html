@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>ABS | The River</title>
+  <link rel="stylesheet" href="./assets/css/style.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="./assets/js/main.js"></script>
+</head>
+<body>
+  <header><p></p></header>
+  <div class="playerStatsContainer">
+    <div class="player">Player 1</div>
+    <div class="playerResources">
+      <span>Resources</span>
+      <div class="playerResourcesCount clay" id="clayAmount">0</div>
+      <div class="playerResourcesCount food" id="foodAmount">0</div>
+      <div class="playerResourcesCount wood" id="woodAmount">0</div>
+      <div class="playerResourcesCount stone" id="stoneAmount">0</div>
+    </div>
+    <div class="playerProduction">
+      <span>Production Power</span>
+      <div class="playerProductionCount clay" id="clayPower">0</div>
+      <div class="playerProductionCount food" id="foodPower">0</div>
+      <div class="playerProductionCount wood" id="woodPower">0</div>
+      <div class="playerProductionCount stone" id="stonePower">0</div>
+    </div>
+  </div>
+  <div class="gameBoard">
+    <span class="resourceHeader"></span>
+    <div class="resourceContainer">
+      <div class="twoResources">
+      <div class="resource clay">
+        <span class="clayValue value" id="claySpan" >0</span>
+       <button class="button" id="clay-button" type="button" data-resource="clay">Get Clay</button>
+      </div>
+      <div class="resource food">
+       <span class="foodValue value" id="foodSpan">0</span>
+       <button class="button" id="food-button" type="button" data-resource="food">Get Food</button>
+     </div>
+     </div>
+     <div class="twoResources">
+        <div class="resource wood">
+          <span class="woodValue value" id="woodSpan">0</span>
+        <button class="button" id="wood-button"type="button" data-resource="wood">Get Wood</button>
+        </div>
+      <div class="resource stone">
+          <span class="stoneValue value" id="stoneSpan">0</span>
+        <button class="button" id="stone-button"type="button" data-resource="stone">Get Stone</button>
+      </div>
+    </div>
+    </div>
+  </div>
+  <div class="tiles">
+    <div class="tile clay">
+      <span class="clay TileValue" id="clayTile">+1</span>
+      <button class="tile-button" id="clay-tile-button" type="button" data-resource="clay">Clay Production</button>
+    </div>
+    <div class="tile food">
+        <span class="food TileValue" id="foodTile">+1</span>
+        <button class="tile-button" id="food-tile-button" type="button" data-resource="food">Food Production</button>
+    </div>
+    <div class="tile wood">
+        <span class="wood TileValue" id="woodTile">+1</span>
+        <button class="tile-button" id="wood-tile-button" type="button" data-resource="wood">Wood Production</button>
+    </div>
+    <div class="tile stone">
+        <span class="stone TileValue" id="stoneTile">+1</span>
+        <button class="tile-button" id="stone-tile-button" type="button" data-resource="stone">Stone Production</button>
+    </div>
+  </div>
+  <div class ="modalShadow hidden" id="winModalContainer">
+    <div class="winModal">
+      <p>Congratulations you win!</p>
+    </div>
+
+  </div>
+  
+</body>
+</html>
