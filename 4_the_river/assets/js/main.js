@@ -58,7 +58,7 @@ class Board{
 
     }
     else {
-      alert("You do not have the production power " + resourceType + "." + "\n" + "Please build more Pylons.");
+      alert("You do not have the production power of " + resourceType + ".");
     }
 
   }

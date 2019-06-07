@@ -5,6 +5,7 @@ body {
     background-attachment: fixed;
     background-position: center;
     background-size: cover;
+    font-family: Verdana, sans-serif;
 }
 
 header {
@@ -66,17 +67,35 @@ header {
 .playerProduction,
 .player {
   border: 2px solid black;
-  height: 21vh;
   text-align: center;
   background-color: rgb(92, 215, 206, 0.75);
-  margin-bottom: 0vh;
+  font-size: 1.50rem;
+}
+
+.player {
+  font-size: 2.5rem;
+}
+
+.playerProduction,
+.playerResources {
+  height: 26vh;
+}
+
+.player {
+  height: 18vh;
 }
 
 .tile,
 .resource,
+.playerResources,
 .playerProductionCount {
   color: #62E6FF;
   text-shadow: 2px 2px 2px black;
+}
+
+.playerResources span {
+  color: black;
+  text-shadow: none;
 }
 
 .resourceContainer {
@@ -110,7 +129,6 @@ header {
 .wood,
 .food,
 .clay {
-  background-image: url("../images/bentonite-clay-800x800.jpg");
   background-size: cover;
   background-repeat: no-repeat;
 }
@@ -138,6 +156,11 @@ header {
   background-color: aqua;
   height: 25%;
   font-size: 2rem;
+  font-family: Verdana, sans-serif;
+}
+
+.tile-button {
+  font-family: Verdana, sans-serif;
 }
 
 .hidden {
