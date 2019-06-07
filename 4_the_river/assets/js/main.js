@@ -99,7 +99,8 @@ class Player{
     this.playerResource[resourceType] += resourceNumber;
     this.updatePlayerDisplay();
 
-    if(this.playerResource === 5){
+    if(this.playerResource.clay === 9 && this.playerResource.food === 4 &&
+      this.playerResource.wood === 9 && this.playerResource.stone === 9){
       this.displayWinModal();
     }
 
