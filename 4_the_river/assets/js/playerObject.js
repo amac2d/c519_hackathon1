@@ -46,7 +46,26 @@ class Player{
         this.updatePlayerDisplay(resourceType);
     }
     displayWinModal(){
+        $(".winModal > p").text('Congratulations, you win!');
+        //took this text out of HTML to use dynamically here
         $("#winModalContainer").removeClass("hidden");
 
     }
+    resetPlayerStats(){
+        this.playerResource = {
+            'clay': 0,
+            'wood': 0,
+            'stone': 0,
+            'food': 0,
+        };
+        this.production = {
+            'clay': 0,
+            'wood': 0,
+            'stone': 0,
+            'food': 0,
+        };
+        this.updatePlayerDisplay();
+
+    }//resetPlayerStats function resets the player stats when the " click to play" button is clicked
+    //should probably be changed to a more DRY or dynamic way //this is just a starting place
 }
