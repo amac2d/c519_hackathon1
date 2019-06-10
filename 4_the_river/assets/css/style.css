@@ -193,4 +193,40 @@ header {
   padding: 100px;
 }
 
+.modal {
+  position: fixed;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  background-color: rgba(0,0,0,0.5);
+}
 
+.modal-content {
+  background-color: midnightblue;
+  margin: 20% auto;
+  padding: 20px;
+  width: 50%;
+  box-shadow: 0 5px 8px 0 rgba(0,0,0,0.2), 0 5px 8px 0 rgba(0,0,0,0.17);
+  font-size: 3vmin;
+  text-align: center;
+  color: white;
+}
+
+.closeBtn {
+  color: white;
+  font-size: 30px;
+}
+
+.closeBtn:hover,
+.closeBtn:focus {
+  color: black;
+  cursor: pointer;
+}
+
+.closeText {
+  font-size: 1rem;
+}
+.closeText:hover {
+  color: black;
+}

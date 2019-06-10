@@ -22,12 +22,14 @@ class Board{
         $('#stoneSpan').text(this.resources.stone);
     }
     addEventListeners(){
+        var closeBtn = $('.closeBtn')[0];
         $('.resource').on('click', 'button', this.decrementResource);
         $('.tiles').on('click', 'button', this.selectProductionTile );
 
         $('.playButton').on('click', this.gameBegins);//calls gameBegins function on line 80
         //which displays modal and calls the functions to reset the stats on the game board
         //and in the player stats ( we still need to change the player stats and resources dynamically)
+        $(closeBtn).on('click', this.closeModal);
 
 
     }
@@ -95,4 +97,11 @@ class Board{
         this.displayGameboard();
     }//resetBoardStats function resets the board stats and displays the resources //still needs to be changed
     //dynamically
+
+    closeModal(){
+        console.log('hello');
+        $('.instructionModal').css({
+                    'display': 'none'
+        });    
+    }
 }
