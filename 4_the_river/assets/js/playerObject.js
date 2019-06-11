@@ -27,13 +27,11 @@ class Player{
 
     }
     updatePlayerDisplay(){
-        //player resources
         $("#clayAmount").text(this.playerResource.clay);
         $("#foodAmount").text(this.playerResource.food);
         $("#woodAmount").text(this.playerResource.wood);
         $("#stoneAmount").text(this.playerResource.stone);
 
-        //player production power
         $('#clayPower').text(this.production.clay);
         $('#foodPower').text(this.production.food);
         $('#woodPower').text(this.production.wood);
@@ -47,7 +45,6 @@ class Player{
     }
     displayWinModal(){
         $(".winModal > p").text('Congratulations, you win!');
-        //took this text out of HTML to use dynamically here
         $("#winModalContainer").removeClass("hidden");
 
     }
@@ -66,6 +63,5 @@ class Player{
         };
         this.updatePlayerDisplay();
 
-    }//resetPlayerStats function resets the player stats when the " click to play" button is clicked
-    //should probably be changed to a more DRY or dynamic way //this is just a starting place
+    }
 }
