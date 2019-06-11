@@ -224,20 +224,19 @@ header {
   color: white;
 }
 
-.closeBtn {
-  color: white;
-  font-size: 30px;
+.inputText {
+  font-size: 1rem;
 }
 
-.closeBtn:hover,
-.closeBtn:focus {
-  color: black;
+.closeBtn {
+  font-size: 1rem;
   cursor: pointer;
 }
 
-.closeText {
-  font-size: 1rem;
+.closeBtn:hover {
+  background:#1c6ea4;
 }
-.closeText:hover {
-  color: black;
+
+.closeBtn:active {
+  background: #144e75;
 }
