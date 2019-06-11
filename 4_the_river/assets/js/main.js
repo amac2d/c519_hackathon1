@@ -7,7 +7,6 @@ function initializeApp(){
   resource.makeNewPlayer('player1');
 
   $('#checkbox').on("click", function saveToLocalStorage() {
-    console.log("hi")
     localStorage.setItem("DontShow", "true");
   });
 

@@ -11,7 +11,7 @@ class Board{
         };
         this.decrementResource = this.decrementResource.bind(this);
         this.selectProductionTile = this.selectProductionTile.bind(this);
-        this.gameBegins = this.gameBegins.bind(this);
+        this.resetGame = this.resetGame.bind(this);
         this.addEventListeners();
         this.displayGameboard();
     }
@@ -25,9 +25,7 @@ class Board{
         var closeBtn = $('.closeBtn')[0];
         $('.resource').on('click', 'button', this.decrementResource);
         $('.tiles').on('click', 'button', this.selectProductionTile );
-        $('.playButton').on('click', this.gameBegins);//calls gameBegins function on line 80
-        //which displays modal and calls the functions to reset the stats on the game board
-        //and in the player stats ( we still need to change the player stats and resources dynamically)
+        $('.playButton').on('click', this.resetGame);
         $(closeBtn).on('click', this.closeModal);
         $('.keepPlayingButton').on('click', this.closeWarningModal);
 
@@ -57,14 +55,12 @@ class Board{
         } else if ( newValue === 0 ){
             $(".warningModal > p").text('You have exhausted all ' + resourceType + ' resources.');
             $("#warningContainer").removeClass("hidden");
-            //needs a button to hide the modal WITHOUT resetting the stats
 
 
         }
         else {
             $(".warningModal> p").text("You do not have the production power of " + resourceType + ".");
             $("#warningContainer").removeClass("hidden");
-            //needs a button to hide the modal WITHOUT resetting the stats
         }
 
     }
@@ -83,11 +79,11 @@ class Board{
     }
 
 
-    gameBegins(){
+    resetGame(){
         $("#winModalContainer").addClass("hidden");
         this.players.player1.resetPlayerStats();
         this.resetBoardStats();
-    }//gameBegins function displays win modal and calls reset functions//
+    }
     resetBoardStats(){
         this.resources = {
             'clay': 9,
@@ -96,8 +92,7 @@ class Board{
             'food': 4
         };
         this.displayGameboard();
-    }//resetBoardStats function resets the board stats and displays the resources //still needs to be changed
-    //dynamically
+    }
     closeWarningModal(){
         $("#warningContainer").addClass("hidden");
     }
@@ -106,5 +101,5 @@ class Board{
                     'display': 'none'
         });    
     }
-    close
+    close 
 }
