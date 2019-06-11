@@ -25,11 +25,12 @@ class Board{
         var closeBtn = $('.closeBtn')[0];
         $('.resource').on('click', 'button', this.decrementResource);
         $('.tiles').on('click', 'button', this.selectProductionTile );
-
         $('.playButton').on('click', this.gameBegins);//calls gameBegins function on line 80
         //which displays modal and calls the functions to reset the stats on the game board
         //and in the player stats ( we still need to change the player stats and resources dynamically)
         $(closeBtn).on('click', this.closeModal);
+        $('.keepPlayingButton').on('click', this.closeWarningModal);
+
 
 
     }
@@ -54,15 +55,15 @@ class Board{
             this.displayGameboard();
             this.players.player1.incrementPlayerResourceValue(productionValue, resourceType);
         } else if ( newValue === 0 ){
-            $(".winModal > p").text('You have exhausted all ' + resourceType + ' resources.');
-            $("#winModalContainer").removeClass("hidden");
+            $(".warningModal > p").text('You have exhausted all ' + resourceType + ' resources.');
+            $("#warningContainer").removeClass("hidden");
             //needs a button to hide the modal WITHOUT resetting the stats
 
 
         }
         else {
-            $(".winModal > p").text("You do not have the production power of " + resourceType + ".");
-            $("#winModalContainer").removeClass("hidden");
+            $(".warningModal> p").text("You do not have the production power of " + resourceType + ".");
+            $("#warningContainer").removeClass("hidden");
             //needs a button to hide the modal WITHOUT resetting the stats
         }
 
@@ -97,11 +98,13 @@ class Board{
         this.displayGameboard();
     }//resetBoardStats function resets the board stats and displays the resources //still needs to be changed
     //dynamically
-
+    closeWarningModal(){
+        $("#warningContainer").addClass("hidden");
+    }
     closeModal(){
-        console.log('hello');
         $('.instructionModal').css({
                     'display': 'none'
         });    
     }
+    close
 }
